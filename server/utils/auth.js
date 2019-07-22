@@ -21,6 +21,6 @@ module.exports.getToken = (req, res) => {
       res.end(JSON.stringify(response.data));
     })
     .catch((err) => {
-      console.log(err);
+      res.status(500).end(JSON.stringify(err));
     });
 };
