@@ -5,8 +5,8 @@
   "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "mkdir client/public; cp -a client/dist/. client/public && webpack -p && node server/index.js",
-    "build:dev": "mkdir client/public; cp -a client/dist/. client/public && webpack -d -w",
+    "start": "mkdir client/public; cp -a client/src/. client/public && webpack -d && node server/index.js",
+    "build:dev": "mkdir client/public; cp -a client/src/. client/public && webpack -d -w",
     "start:dev": "nodemon server/index.js"
   },
   "repository": {
@@ -20,10 +20,14 @@
   },
   "homepage": "https://github.com/khengschew/glide-challenge#readme",
   "dependencies": {
+    "axios": "^0.19.0",
+    "dotenv": "^8.0.0",
     "express": "^4.17.1",
+    "form-urlencoded": "^3.0.1",
     "moment": "^2.24.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "spotify-web-api-js": "^1.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
