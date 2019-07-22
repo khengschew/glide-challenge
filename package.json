@@ -2,9 +2,12 @@
   "name": "glide-challenge",
   "version": "1.0.0",
   "description": "A Spotify search tool using the Spotify API",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "mkdir client/public; cp -a client/dist/. client/public && webpack -p && node server/index.js",
+    "build:dev": "mkdir client/public; cp -a client/dist/. client/public && webpack -d -w",
+    "start:dev": "nodemon server/index.js"
   },
   "repository": {
     "type": "git",
