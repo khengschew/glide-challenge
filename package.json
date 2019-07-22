@@ -1,0 +1,19 @@
+{
+  "name": "glide-challenge",
+  "version": "1.0.0",
+  "description": "A Spotify search tool using the Spotify API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khengschew/glide-challenge.git"
+  },
+  "author": "Kheng Chew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khengschew/glide-challenge/issues"
+  },
+  "homepage": "https://github.com/khengschew/glide-challenge#readme"
+}
