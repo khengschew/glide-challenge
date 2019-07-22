@@ -2,11 +2,15 @@ const Auth = {
   getToken: () => {
     // (Public) Get Spotify access token
     // Includes logic to check whether token has expired
-    const localToken = localStorage.getItem("token");
     let resPromise;
+    let localToken = localStorage.getItem("token");
+    localToken = localToken ? JSON.parse(localToken) : localToken;
 
-    if (localToken) {
-      resPromise = Promise.resolve(JSON.parse(localToken).access_token);
+    if (
+      localToken &&
+      Date.now() < localToken.timestamp + (localToken.expires_in - 10) * 1000
+    ) {
+      resPromise = Promise.resolve(localToken.access_token);
     } else {
       resPromise = Auth.__fetchToken()
         .then((res) => res.json())
