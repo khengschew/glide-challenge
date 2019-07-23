@@ -25,12 +25,13 @@ body {
       rgb(0, 0, 0)
     ),
     linear-gradient(transparent, rgb(0, 0, 0) 70%);
+  -webkit-font-smoothing: antialiased;
 }
 
 #search {
   display: flex;
   justify-content: center;
-  font-family: "SC-Light", sans-serif;
+  font-family: "SC-Book", sans-serif;
 }
 
 #search-field {
@@ -50,4 +51,24 @@ body {
 
 #search button:active {
   opacity: 1;
+}
+
+#content-list {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.list-view {
+  width: 50%;
+  box-sizing: border-box;
+  padding: 40px;
+}
+
+.list-view h1 {
+  font-family: "SC-Regular", sans-serif;
+  text-transform: uppercase;
+  font-size: 1vw;
+  letter-spacing: 0.25em;
+  color: white;
+  padding-left: 20px;
 }
