@@ -28,10 +28,8 @@ const ArtistList = ({ list, pageChange, selectArtist }) => (
     {list.items.map((a, i) => (
       <ArtistItem item={a} selectArtist={selectArtist} key={a.id} />
     ))}
-    {list.items.length === 0 ? (
+    {list.items.length === 0 && (
       <div className="no-results">No results found</div>
-    ) : (
-      ""
     )}
   </div>
 );

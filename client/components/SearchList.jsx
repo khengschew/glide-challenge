@@ -13,16 +13,14 @@ const SearchList = ({
   <>
     <Search onSearch={onSearch} />
     <div id="content-list">
-      {artists ? (
+      {artists && (
         <ArtistList
           list={artists}
           pageChange={onPagination}
           selectArtist={selectArtist}
         />
-      ) : (
-        ""
       )}
-      {tracks ? <TrackList list={tracks} pageChange={onPagination} /> : ""}
+      {tracks && <TrackList list={tracks} pageChange={onPagination} />}
     </div>
   </>
 );

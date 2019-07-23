@@ -28,10 +28,8 @@ const TrackList = ({ list, pageChange }) => (
     {list.items.map((a, i) => (
       <TrackItem item={a} key={a.id} />
     ))}
-    {list.items.length === 0 ? (
+    {list.items.length === 0 && (
       <div className="no-results">No results found</div>
-    ) : (
-      ""
     )}
   </div>
 );
