@@ -25,6 +25,7 @@ class App extends React.Component {
   render() {
     return (
       <>
+        <div id="background" />
         <Search onSearch={this.onSearch} />
         <div id="content-list">
           {this.state.artists ? <ArtistList list={this.state.artists} /> : ""}
