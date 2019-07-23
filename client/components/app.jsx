@@ -9,8 +9,8 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      artists: [],
-      tracks: [],
+      artists: {},
+      tracks: {},
     };
 
     this.onSearch = this.onSearch.bind(this);
@@ -27,8 +27,16 @@ class App extends React.Component {
       <>
         <Search onSearch={this.onSearch} />
         <div id="content-list">
-          <ArtistList />
-          <TrackList />
+          {this.state.artists.items && this.state.artists.items.length ? (
+            <ArtistList list={this.state.artists} />
+          ) : (
+            ""
+          )}
+          {this.state.tracks.items && this.state.tracks.items.length ? (
+            <TrackList list={this.state.tracks} />
+          ) : (
+            ""
+          )}
         </div>
       </>
     );
