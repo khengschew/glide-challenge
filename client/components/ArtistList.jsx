@@ -2,13 +2,27 @@ import React from "react";
 import { Button } from "antd";
 import ArtistItem from "./ArtistItem";
 
-const ArtistList = ({ list }) => (
+const ArtistList = ({ list, pageChange, prev, next }) => (
   <div className="list-view">
     <div className="list-header">
       <h1>Artists</h1>
       <div className="list-header-buttons">
-        <Button type="link" icon="caret-left" />
-        <Button type="link" icon="caret-right" />
+        <Button
+          type="link"
+          icon="caret-left"
+          onClick={() => {
+            pageChange(prev);
+          }}
+          disabled={!prev}
+        />
+        <Button
+          type="link"
+          icon="caret-right"
+          onClick={() => {
+            pageChange(next);
+          }}
+          disabled={!next}
+        />
       </div>
     </div>
     {list.items.map((a, i) => (
