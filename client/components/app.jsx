@@ -1,7 +1,7 @@
 import React from "react";
-import Search from "./Search";
-import ArtistList from "./ArtistList";
-import TrackList from "./TrackList";
+import { Router } from "@reach/router";
+import SearchList from "./SearchList";
+import ArtistDetail from "./ArtistDetail";
 import Api from "../utils/api";
 
 class App extends React.Component {
@@ -11,10 +11,12 @@ class App extends React.Component {
     this.state = {
       artists: null,
       tracks: null,
+      selectedArtist: null,
     };
 
     this.onSearch = this.onSearch.bind(this);
     this.onPagination = this.onPagination.bind(this);
+    this.selectArtist = this.selectArtist.bind(this);
   }
 
   onSearch(query) {
@@ -29,33 +31,29 @@ class App extends React.Component {
     });
   }
 
+  selectArtist(artist) {
+    this.setState({ selectedArtist: artist });
+  }
+
   render() {
     return (
       <>
         <div id="background" />
-        <Search onSearch={this.onSearch} />
-        <div id="content-list">
-          {this.state.artists ? (
-            <ArtistList
-              list={this.state.artists}
-              pageChange={this.onPagination}
-              prev={this.state.artists.previous}
-              next={this.state.artists.next}
-            />
-          ) : (
-            ""
-          )}
-          {this.state.tracks ? (
-            <TrackList
-              list={this.state.tracks}
-              pageChange={this.onPagination}
-              prev={this.state.tracks.previous}
-              next={this.state.tracks.next}
-            />
-          ) : (
-            ""
-          )}
-        </div>
+        <Router>
+          <SearchList
+            onSearch={this.onSearch}
+            onPagination={this.onPagination}
+            selectArtist={this.selectArtist}
+            artists={this.state.artists}
+            tracks={this.state.tracks}
+            path="/"
+          />
+          <ArtistDetail
+            path="/artist"
+            artist={this.state.selectedArtist}
+            onPagination={this.onPagination}
+          />
+        </Router>
       </>
     );
   }

@@ -115,9 +115,6 @@
   padding: 20px;
   display: flex;
   word-wrap: break-word;
-}
-
-.track-item {
   cursor: pointer;
 }
 
@@ -160,4 +157,82 @@
   font-size: 1vw;
   color: lightgrey;
   padding-left: 20px;
+}
+
+.artist-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.artist-detail a {
+  color: white;
+  background-color: #1db954;
+  border-color: #1db954;
+  margin: 10px;
+}
+
+.artist-detail a:hover,
+.artist-detail a:active,
+.artist-detail a:focus {
+  background-color: #1db954;
+  border-color: #1db954;
+}
+
+.artist-detail a:hover {
+  opacity: 0.8;
+}
+
+.detail-header {
+  font-family: "SC-Regular", sans-serif;
+  font-size: 3vw;
+  text-align: center;
+  color: white;
+  margin: 20px 0;
+}
+
+.detail-header h1 {
+  font-size: 1vw;
+}
+
+.detail-body {
+  display: flex;
+  justify-content: center;
+}
+
+.detail-sidebar {
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-image {
+  width: 20vw;
+  height: 20vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.sidebar-info {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.sidebar-info-div {
+  padding: 10px;
+}
+
+.sidebar-info-title {
+  font-family: "SC-Book", sans-serif;
+  font-size: 1vw;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.sidebar-info-content {
+  font-family: "SC-Light", sans-serif;
+  font-size: 0.8vw;
+  color: #bdaeae;
+  letter-spacing: 0.05em;
 }
