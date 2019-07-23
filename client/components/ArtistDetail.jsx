@@ -17,33 +17,48 @@ const ArtistDetail = ({ artist, onPagination }) => {
     : "https://developer.spotify.com/assets/branding-guidelines/icon3@2x.png";
 
   return (
-    <>
-      <div className="detail-header">
-        <h1>{artist.name}</h1>
-        <Button />
-      </div>
-      <div className="detail-sidebar">
-        <div
-          className="sidebar-image"
-          style={{
-            backgroundImage: `url("${image}")`,
-          }}
-        />
-        <div className="sidebar-info">
-          <div className="sidebar-info-title">Followers</div>
-          <div className="sidebar-info-content">{artist.followers.total}</div>
-          <div className="sidebar-info-title">Popularity</div>
-          <div className="sidebar-info-content">{artist.popularity}</div>
-          <div className="sidebar-info-title">Genres</div>
-          <div className="sidebar-info-content">
-            {artist.genres.length
-              ? artist.genres.map((g) => <p key={g}>{g}</p>)
-              : "none"}
+    <div className="artist-detail">
+      <div className="detail-header">{artist.name}</div>
+      <div className="detail-body">
+        <div className="detail-sidebar">
+          <div
+            className="sidebar-image"
+            style={{
+              backgroundImage: `url("${image}")`,
+            }}
+          />
+          <Button
+            type="primary"
+            href={artist.external_urls.spotify}
+            target="_blank"
+            shape="round"
+          >
+            Spotify
+          </Button>
+          <div className="sidebar-info">
+            <div className="sidebar-info-div">
+              <div className="sidebar-info-title">Followers</div>
+              <div className="sidebar-info-content">
+                {artist.followers.total}
+              </div>
+            </div>
+            <div className="sidebar-info-div">
+              <div className="sidebar-info-title">Popularity</div>
+              <div className="sidebar-info-content">{artist.popularity}</div>
+            </div>
+            <div className="sidebar-info-div">
+              <div className="sidebar-info-title">Genres</div>
+              <div className="sidebar-info-content">
+                {artist.genres.length
+                  ? artist.genres.map((g) => <p key={g}>{g}</p>)
+                  : "none"}
+              </div>
+            </div>
           </div>
         </div>
+        {tracks && <TrackList list={tracks} pageChange={onPagination} />}
       </div>
-      {tracks && <TrackList list={tracks} pageChange={onPagination} />}
-    </>
+    </div>
   );
 };
 
