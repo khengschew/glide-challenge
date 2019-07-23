@@ -7,3 +7,4 @@ A Spotify search tool using the Spotify API
 CREDENTIALS={SpotifyKey}
 ```
 2. Run `npm start`
+3. Visit [localhost:8000](http://localhost:8000/)
