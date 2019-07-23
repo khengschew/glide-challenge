@@ -61,7 +61,7 @@ body {
 .list-view {
   width: 50%;
   box-sizing: border-box;
-  padding: 40px;
+  padding: 0 40px 40px 40px;
 }
 
 .list-view h1 {

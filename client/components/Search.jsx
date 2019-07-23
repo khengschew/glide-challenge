@@ -13,7 +13,7 @@ const Search = ({ onSearch }) => (
       id="search-field"
       style={{
         width: "80%",
-        margin: "10px",
+        margin: "40px",
       }}
       enterButton
     />
