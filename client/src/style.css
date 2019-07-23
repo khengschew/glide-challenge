@@ -115,9 +115,6 @@
   padding: 20px;
   display: flex;
   word-wrap: break-word;
-}
-
-.track-item {
   cursor: pointer;
 }
 

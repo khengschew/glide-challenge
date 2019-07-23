@@ -1,13 +1,13 @@
 import React from "react";
 
-const ArtistItem = ({ item }) => {
+const ArtistItem = ({ item, selectArtist }) => {
   const image =
     item.images && item.images.length
       ? item.images[0].url
       : "https://developer.spotify.com/assets/branding-guidelines/icon3@2x.png";
 
   return (
-    <div className="list-item artist-item">
+    <div className="list-item artist-item" onClick={() => selectArtist(item)}>
       <div
         style={{
           backgroundImage: `url("${image}")`,

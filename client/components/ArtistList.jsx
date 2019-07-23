@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "antd";
 import ArtistItem from "./ArtistItem";
 
-const ArtistList = ({ list, pageChange, prev, next }) => (
+const ArtistList = ({ list, pageChange, prev, next, selectArtist }) => (
   <div className="list-view">
     <div className="list-header">
       <h1>Artists</h1>
@@ -26,7 +26,7 @@ const ArtistList = ({ list, pageChange, prev, next }) => (
       </div>
     </div>
     {list.items.map((a, i) => (
-      <ArtistItem item={a} key={a.id} />
+      <ArtistItem item={a} selectArtist={selectArtist} key={a.id} />
     ))}
     {list.items.length === 0 ? (
       <div className="no-results">No results found</div>

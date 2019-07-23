@@ -3,6 +3,7 @@ import Search from "./Search";
 import ArtistList from "./ArtistList";
 import TrackList from "./TrackList";
 import Api from "../utils/api";
+import ArtistDetail from "./ArtistDetail";
 
 class App extends React.Component {
   constructor(props) {
@@ -11,10 +12,13 @@ class App extends React.Component {
     this.state = {
       artists: null,
       tracks: null,
+      selectedArtist: null,
     };
 
     this.onSearch = this.onSearch.bind(this);
     this.onPagination = this.onPagination.bind(this);
+    this.selectArtist = this.selectArtist.bind(this);
+    this.unselectArtist = this.unselectArtist.bind(this);
   }
 
   onSearch(query) {
@@ -29,6 +33,14 @@ class App extends React.Component {
     });
   }
 
+  selectArtist(artist) {
+    this.setState({ selectedArtist: artist });
+  }
+
+  unselectArtist() {
+    this.setState({ selectedArtist: null });
+  }
+
   render() {
     return (
       <>
@@ -41,6 +53,7 @@ class App extends React.Component {
               pageChange={this.onPagination}
               prev={this.state.artists.previous}
               next={this.state.artists.next}
+              selectArtist={this.selectArtist}
             />
           ) : (
             ""
@@ -56,6 +69,15 @@ class App extends React.Component {
             ""
           )}
         </div>
+        {this.state.selectedArtist ? (
+          <ArtistDetail
+            visible={!!this.state.selectedArtist}
+            title={this.state.selectedArtist.name}
+            onCancel={this.unselectArtist}
+          />
+        ) : (
+          ""
+        )}
       </>
     );
   }
