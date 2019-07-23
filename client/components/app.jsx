@@ -1,5 +1,10 @@
 import React from "react";
+import Search from "./Search";
 
-const App = (props) => <>Hello React World!</>;
+const App = (props) => (
+  <>
+    <Search />
+  </>
+);
 
 export default App;
