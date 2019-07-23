@@ -72,6 +72,10 @@
   padding: 0 40px 40px 40px;
 }
 
+.list-header {
+  display: flex;
+}
+
 .list-view h1 {
   font-family: "SC-Regular", sans-serif;
   text-transform: uppercase;
@@ -79,6 +83,29 @@
   letter-spacing: 0.25em;
   color: white;
   padding-left: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.list-header-buttons {
+  margin-left: auto;
+  margin-right: 20px;
+  color: white;
+  font-size: 1.5vw;
+  cursor: pointer;
+}
+
+.list-header-buttons button {
+  color: white;
+  border-color: transparent;
+  font-size: 1.5vw;
+}
+
+.list-header-buttons button:hover,
+.list-header-buttons button:active,
+.list-header-buttons button:focus {
+  color: #1db954;
+  border-color: transparent;
 }
 
 .list-item {
@@ -119,7 +146,7 @@
   padding-left: 1vw;
   font-family: "SC-Light", sans-serif;
   font-size: 0.8vw;
-  color: #b3b3b3;
+  color: #bdaeae;
   letter-spacing: 0.05em;
 }
 
