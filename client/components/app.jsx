@@ -3,7 +3,6 @@ import Search from "./Search";
 import ArtistList from "./ArtistList";
 import TrackList from "./TrackList";
 import Api from "../utils/api";
-import ArtistDetail from "./ArtistDetail";
 
 class App extends React.Component {
   constructor(props) {
@@ -69,15 +68,6 @@ class App extends React.Component {
             ""
           )}
         </div>
-        {this.state.selectedArtist ? (
-          <ArtistDetail
-            visible={!!this.state.selectedArtist}
-            title={this.state.selectedArtist.name}
-            onCancel={this.unselectArtist}
-          />
-        ) : (
-          ""
-        )}
       </>
     );
   }

@@ -1,6 +1,5 @@
 import React from "react";
 import { Icon } from "antd";
-import Item from "antd/lib/list/Item";
 
 const TrackItem = ({ item }) => {
   const image =
