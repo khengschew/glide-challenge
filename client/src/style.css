@@ -72,3 +72,16 @@ body {
   color: white;
   padding-left: 20px;
 }
+
+.list-item {
+  font-family: "SC-Book", sans-serif;
+  font-size: 1vw;
+  color: white;
+}
+
+.no-results {
+  font-family: "SC-Light", sans-serif;
+  font-size: 1vw;
+  color: lightgrey;
+  padding-left: 20px;
+}
