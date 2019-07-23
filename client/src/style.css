@@ -1,0 +1,32 @@
+body {
+  background-image: linear-gradient(
+      to right bottom,
+      rgb(56, 84, 97),
+      rgb(0, 0, 0)
+    ),
+    linear-gradient(transparent, rgb(0, 0, 0) 70%);
+}
+
+#search {
+  display: flex;
+  justify-content: center;
+}
+
+#search-field {
+  background-color: #191414;
+  border-color: #1db954;
+  color: white;
+}
+
+#search button {
+  background-color: #1db954;
+  border-color: #1db954;
+}
+
+#search button:hover {
+  opacity: 0.8;
+}
+
+#search button:active {
+  opacity: 1;
+}

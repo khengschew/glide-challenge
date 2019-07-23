@@ -6,19 +6,14 @@ import "antd/dist/antd.css";
 const SearchField = Input.Search;
 
 const Search = (props) => (
-  <div
-    id="search"
-    style={{
-      display: "flex",
-      justifyContent: "center",
-    }}
-  >
+  <div id="search">
     <SearchField
       placeholder="Search for artist or track"
       onSearch={(value) =>
         Api.searchSpotify(value).then((response) => console.log(response))
       }
       size="large"
+      id="search-field"
       style={{
         width: "80%",
         margin: "10px",
