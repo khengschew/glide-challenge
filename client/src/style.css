@@ -1,3 +1,23 @@
+@font-face {
+  font-family: "SC-Regular";
+  src: url("fonts/CircularSpUIv3T-Black.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SC-Bold";
+  src: url("fonts/CircularSpUIv3T-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SC-Book";
+  src: url("fonts/CircularSpUIv3T-Book.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SC-Light";
+  src: url("fonts/CircularSpUIv3T-Light.woff2") format("woff2");
+}
+
 body {
   background-image: linear-gradient(
       to right bottom,
@@ -10,6 +30,7 @@ body {
 #search {
   display: flex;
   justify-content: center;
+  font-family: "SC-Light", sans-serif;
 }
 
 #search-field {
