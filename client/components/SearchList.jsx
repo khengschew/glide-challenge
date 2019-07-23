@@ -17,23 +17,12 @@ const SearchList = ({
         <ArtistList
           list={artists}
           pageChange={onPagination}
-          prev={artists.previous}
-          next={artists.next}
           selectArtist={selectArtist}
         />
       ) : (
         ""
       )}
-      {tracks ? (
-        <TrackList
-          list={tracks}
-          pageChange={onPagination}
-          prev={tracks.previous}
-          next={tracks.next}
-        />
-      ) : (
-        ""
-      )}
+      {tracks ? <TrackList list={tracks} pageChange={onPagination} /> : ""}
     </div>
   </>
 );
