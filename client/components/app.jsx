@@ -1,5 +1,7 @@
 import React from "react";
+import { Router } from "@reach/router";
 import SearchList from "./SearchList";
+import ArtistDetail from "./ArtistDetail";
 import Api from "../utils/api";
 
 class App extends React.Component {
@@ -37,13 +39,21 @@ class App extends React.Component {
     return (
       <>
         <div id="background" />
-        <SearchList
-          onSearch={this.onSearch}
-          onPagination={this.onPagination}
-          selectArtist={this.selectArtist}
-          artists={this.state.artists}
-          tracks={this.state.tracks}
-        />
+        <Router>
+          <SearchList
+            onSearch={this.onSearch}
+            onPagination={this.onPagination}
+            selectArtist={this.selectArtist}
+            artists={this.state.artists}
+            tracks={this.state.tracks}
+            path="/"
+          />
+          <ArtistDetail
+            path="/artist"
+            artist={this.state.selectedArtist}
+            onPagination={this.onPagination}
+          />
+        </Router>
       </>
     );
   }

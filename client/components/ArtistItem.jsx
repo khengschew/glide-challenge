@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "@reach/router";
 
 const ArtistItem = ({ item, selectArtist }) => {
   const image =
@@ -7,20 +8,22 @@ const ArtistItem = ({ item, selectArtist }) => {
       : "https://developer.spotify.com/assets/branding-guidelines/icon3@2x.png";
 
   return (
-    <div className="list-item artist-item" onClick={() => selectArtist(item)}>
-      <div
-        style={{
-          backgroundImage: `url("${image}")`,
-        }}
-        className={"list-item-image"}
-      />
-      <div className="list-item-text">
-        <div className="list-title">{item.name}</div>
+    <Link to="/artist" onClick={() => selectArtist(item)}>
+      <div className="list-item artist-item">
+        <div
+          style={{
+            backgroundImage: `url("${image}")`,
+          }}
+          className={"list-item-image"}
+        />
+        <div className="list-item-text">
+          <div className="list-title">{item.name}</div>
+        </div>
+        <div className="list-cta">
+          <div className="artist-next">+</div>
+        </div>
       </div>
-      <div className="list-cta">
-        <div className="artist-next">+</div>
-      </div>
-    </div>
+    </Link>
   );
 };
 
